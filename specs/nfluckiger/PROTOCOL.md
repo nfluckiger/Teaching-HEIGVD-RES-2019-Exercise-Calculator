@@ -11,10 +11,14 @@ The client speaks first
 The client ask for a calculation and then the server return the result
 
 *What happens when a message is received from the other party?
-The server compute the calculation
+The server compute the calculation and return it
 The client has no reaction
 
 *What is the syntax of the messages? How we generate and parse them?
+the client send this :
+
+COMPUTE-THIS JSON
+
 The message are JSON request with data set this way
 	{
 		calculation:{
@@ -23,6 +27,15 @@ The message are JSON request with data set this way
 			OPERANDETWO:'y'(can be a calculation)
 		}
 	}
-	
+
+The server return this
+
+THE-AWNSER-IS JSON
+
+{
+	awnser:NUMBER
+}
+
+
 *Who closes the connection and when?
 After an anwser the server closes the connection.
